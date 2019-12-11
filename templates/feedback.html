@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+<html>
+<body>
+  {% block content %}
+      {% if data %}
+
+    {% for i in data %}
+        Name:{{ i.name }}<br>
+        Rating:{{ i.rating }}<br>
+        Description:{{ i.desc }}<br><br>
+    {% endfor %}
+      {% else %}
+          <h2>data not available</h2>
+      {% endif %}
+
+    <form method="post">
+    {% csrf_token %}
+     {{ fdform }}
+    <input type="submit" value="Submit" class="btn btn-success">
+    <input type="reset" value="Clear" class="btn btn-danger">
+    </form>
+{% endblock %}
+</body>
+</html>

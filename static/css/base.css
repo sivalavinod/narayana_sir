@@ -1,0 +1,16 @@
+
+header{
+    text-align: center;
+}
+
+ul{
+    float: right;
+    margin-top: 10px;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width:100%;
+    text-align: center;
+
+}
