@@ -39,7 +39,6 @@ class Registration_form(forms.Form):
     )
     mobile=forms.IntegerField(label='mobile')
     email=forms.EmailField(label='email')
-    image=forms.FileField(label='image')
 
 
 class Login_form(forms.Form):

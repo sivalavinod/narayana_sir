@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 
 class Registration(models.Model):
     fn=models.CharField(max_length=100)
@@ -7,7 +8,6 @@ class Registration(models.Model):
     pswd=models.CharField(max_length=100)
     mobile=models.BigIntegerField()
     email=models.EmailField(max_length=100)
-    image=models.FileField(upload_to='vinod',default=False)
 
 class Feedback_model(models.Model):
     name=models.CharField(max_length=100)
@@ -16,6 +16,23 @@ class Feedback_model(models.Model):
     desc=models.CharField(max_length=500,default=False)
 
 
+class Contact_model(models.Model):
+    name=models.CharField(max_length=100)
+    mobile=models.BigIntegerField()
+    email=models.EmailField(max_length=100)
+    courses=(
+        ('python','PYTHON'),
+         ('java','JAVA'),
+          ('.net','.NET')
+    )
+    courses=MultiSelectField(max_length=100, choices=courses)
+    faculty=(
+        ('vinod','VINOD'),
+        ('sivala','SIVALA'),
+        ('kumar','KUMAR')
+    )
+    faculty=MultiSelectField(max_length=100, choices=faculty)
+    gender=models.CharField(max_length=100)
 
 
 
